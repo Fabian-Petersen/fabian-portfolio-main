@@ -12,24 +12,23 @@ Variables
 */
 
 :root {
-  /* dark shades of primary color*/
-  /* --clr-primary-test: hsl(214, 82%, 15%); */
-  --clr-primary-1: hsl(43, 86%, 17%);
-  --clr-primary-2: hsl(43, 77%, 27%);
-  --clr-primary-3: hsl(43, 72%, 37%);
-  --clr-primary-4: hsl(42, 63%, 48%);
-  /* primary/main color */
-  --clr-primary-5: hsl(42, 78%, 60%);
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(43, 89%, 70%);
-  --clr-primary-7: hsl(43, 90%, 76%);
-  --clr-primary-8: hsl(45, 86%, 81%);
-  --clr-primary-9: hsl(45, 90%, 88%);
-  --clr-primary-10: hsl(45, 100%, 96%);
+  --clr-primary-1: #f1d8d8;
+  --clr-primary-2: #e2b2b2;
+  --clr-primary-3: #d48b8b;
+  --clr-primary-4: #c56565;
+  /* primary/main color */
+  --clr-primary-5: #b73e3e;
+  /* dark shades of primary color*/
+  --clr-primary-6: #923232;
+  --clr-primary-7: #6e2525;
+  --clr-primary-8: #491919;
+  --clr-primary-9: #250c0c;
+  --clr-primary-10: #000000;
   /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-2: hsl(211, 39%, 23%);
-  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-1: #102a42;
+  --clr-grey-2: #243a52;
+  --clr-grey-3: #324d67;
   --clr-grey-4: hsl(209, 28%, 39%);
   /* grey used for paragraphs */
   --clr-grey-5: hsl(210, 22%, 49%);
@@ -226,7 +225,7 @@ Navbar
 
 @media screen and (min-width: 768px) {
   .nav {
-    background-color: var(--clr-primary-10);
+    background-color: var(--clr-primary-5);
   }
 
   .nav-btn {
@@ -245,14 +244,14 @@ Navbar
     position: relative;
     text-transform: capitalize;
     font-weight: bold;
-    color: var(--clr-grey-2);
+    color: var(--clr-white);
     letter-spacing: var(--spacing);
   }
 
   .nav-links a::after {
     content: " ";
     position: absolute;
-    background-color: var(--clr-primary-5);
+    background-color: var(--clr-primary-2);
     height: 3px;
     width: 0;
     left: 0;
@@ -261,7 +260,7 @@ Navbar
   }
 
   .nav-links a:hover {
-    color: var(--clr-primary-5);
+    color: var(--clr-primary-3);
   }
 
   .nav-links a:hover::after {
@@ -282,7 +281,7 @@ Navbar
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--clr-white);
+  background: var(--clr-primary-3);
   z-index: 2;
   box-shadow: var(--light-shadow);
 }
@@ -383,7 +382,7 @@ Hero
 }
 
 .hero {
-  background: var(--clr-primary-10);
+  background: var(--clr-primary-2);
 }
 
 .hero-center {
