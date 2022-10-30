@@ -43,6 +43,7 @@ Variables
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
+  --scale-up: 1.1;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
@@ -104,6 +105,7 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -145,6 +147,7 @@ p {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
 }
+
 .btn:hover {
   color: var(--clr-primary-1);
   background: var(--clr-primary-7);
@@ -188,6 +191,10 @@ p {
 Navbar
 ===============
 */
+.logo:hover {
+  cursor: pointer;
+}
+
 .nav-links {
   display: none;
 }
@@ -260,7 +267,7 @@ Navbar
   }
 
   .nav-links a:hover {
-    color: var(--clr-primary-3);
+    color: yellow;
   }
 
   .nav-links a:hover::after {
@@ -341,13 +348,13 @@ Sidebar
 
 .social-icon {
   font-size: 1.5rem;
-  color: var(--clr-grey-1);
+  color: var(--clr-grey-3);
   transition: var(--transition);
 }
 
 .social-icon:hover {
   color: var(--clr-primary-5);
-  /* transform: scale(1.15); */
+  transform: scale(1.1);
 }
 
 .close-btn {
@@ -400,6 +407,11 @@ Hero
   justify-items: start;
 }
 
+.hero-btn-2 {
+  margin: 0.5rem;
+  background-color: var(--clr-primary-4);
+}
+
 @media screen and (min-width: 992px) {
   .hero-img {
     display: block;
@@ -410,26 +422,17 @@ Hero
     grid-template-columns: 1fr 1fr;
   }
 
-  .hero-img::before,
-  .about-img::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 0.25rem solid var(--clr-primary-5);
-    top: 2rem;
-    right: -2rem;
-    border-radius: var(--radius);
+  .hero-btn-2 {
+    margin: 1.5rem;
   }
-}
 
-.hero-photo {
-  max-width: 25rem;
-  max-height: 30rem;
-  -o-object-fit: cover;
-  object-fit: cover;
-  border-radius: var(--radius);
-  position: relative;
+  .social-icon {
+    font-size: 2rem;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.2);
+  }
 }
 
 /*
@@ -583,6 +586,7 @@ Projects
 
 .project:hover .project-img {
   opacity: 0.1;
+  transform: scale(1.05);
 }
 
 .project::after {
@@ -683,8 +687,8 @@ Connect
   /* background-color: rgba(0, 0, 0, 0.7); 
   or
   */
-  background-color: var(--clr-grey-2);
-  opacity: 0.7;
+  background-color: var(--clr-grey-1);
+  opacity: 0.2;
   z-index: -1;
 }
 
@@ -698,28 +702,9 @@ Connect
 }
 
 .video-banner {
-  background-color: var(--clr-primary-10);
+  /* background-color: var(--clr-primary-10); */
   padding: 3rem 5rem 20rem 5rem;
   text-align: center;
-  opacity: 0.65;
-  -webkit-clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 60%,
-    85% 60%,
-    85% 85%,
-    60% 60%,
-    0 60%
-  );
-  clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 60%,
-    85% 60%,
-    85% 85%,
-    60% 60%,
-    0 60%
-  );
 }
 
 /*
