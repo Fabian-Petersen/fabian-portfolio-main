@@ -13,18 +13,17 @@ Variables
 
 :root {
   /* lighter shades of primary color */
-  --clr-primary-1: #f1d8d8;
-  --clr-primary-2: #e2b2b2;
-  --clr-primary-3: #d48b8b;
-  --clr-primary-4: #c56565;
+  --clr-primary-1: #ccf1ee;
+  --clr-primary-2: #99e3dd;
+  --clr-primary-3: #66d4cb;
+  --clr-primary-4: #33c6ba;
   /* primary/main color */
-  --clr-primary-5: #b73e3e;
+  --clr-primary-5: #00b8a9;
   /* dark shades of primary color*/
-  --clr-primary-6: #923232;
-  --clr-primary-7: #6e2525;
-  --clr-primary-8: #491919;
-  --clr-primary-9: #250c0c;
-  --clr-primary-10: #000000;
+  --clr-primary-6: #009387;
+  --clr-primary-7: #006e65;
+  --clr-primary-8: #004a44;
+  --clr-primary-9: #002522;
   /* darkest grey - used for headings */
   --clr-grey-1: #102a42;
   --clr-grey-2: #243a52;
@@ -37,6 +36,7 @@ Variables
   --clr-grey-8: hsl(210, 31%, 80%);
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-black: #000000;
   --clr-white: #fff;
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
@@ -134,7 +134,7 @@ p {
 .btn {
   text-transform: uppercase;
   background: var(--clr-primary-5);
-  color: var(--clr-primary-1);
+  color: var(--clr-white);
   /* padding: 0.375rem 0.75rem; */
   padding: 0.75rem 1.5rem;
   letter-spacing: var(--spacing);
@@ -258,7 +258,8 @@ Navbar
   .nav-links a::after {
     content: " ";
     position: absolute;
-    background-color: var(--clr-primary-2);
+    /* background-color: var(--clr-primary-2); */
+    background-color: yellow;
     height: 3px;
     width: 0;
     left: 0;
@@ -389,7 +390,10 @@ Hero
 }
 
 .hero {
-  background: var(--clr-primary-2);
+  /* width: 100vw; */
+  /* background-image: url(/images/pexels-prateek-katyal-2740956.jpg); */
+  /* background-size: cover; */
+  background: var(--clr-primary-5);
 }
 
 .hero-center {
@@ -433,6 +437,10 @@ Hero
   .social-icon:hover {
     transform: scale(1.2);
   }
+
+  .hero {
+    background-size: cover;
+  }
 }
 
 /*
@@ -460,6 +468,10 @@ About
   justify-self: center;
 }
 
+.resume-btn {
+  background-color: var(--clr-primary-8);
+}
+
 @media screen and (min-width: 992px) {
   .about-center {
     grid-template-columns: 1fr 1fr;
@@ -476,6 +488,10 @@ About
   .about-info {
     align-self: center;
   }
+
+  .resume-btn {
+    margin-left: 1rem;
+  }
 }
 
 /*
@@ -484,12 +500,14 @@ Services
 ===============
 /*bg-grey in globals*/
 .service {
+  position: relative;
   background: var(--clr-white);
   padding: 3rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: var(--radius);
   text-align: center;
   transition: var(--transition);
+  display: inline-block;
 }
 
 .service-icon {
@@ -511,6 +529,8 @@ Services
 .service:hover {
   background-color: var(--clr-primary-5);
   color: var(--clr-white);
+  transform: scale(1.025);
+  box-shadow: var(--dark-shadow);
 }
 
 .service:hover p {
