@@ -4,6 +4,7 @@ Fonts
 ===============
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 /*
 =============== 
@@ -13,33 +14,43 @@ Variables
 
 :root {
   /* lighter shades of primary color */
-  --clr-primary-1: #ccf1ee;
-  --clr-primary-2: #99e3dd;
-  --clr-primary-3: #66d4cb;
-  --clr-primary-4: #33c6ba;
+  --clr-primary-1: hsl(216, 10%, 87%);
+  --clr-primary-2: hsl(216, 10%, 75%);
+  --clr-primary-3: hsl(216, 10%, 62%);
+  --clr-primary-4: hsl(217, 10%, 25%);
+
   /* primary/main color */
-  --clr-primary-5: #00b8a9;
+  --clr-primary-5: hsl(216, 18%, 20%);
+
   /* dark shades of primary color*/
-  --clr-primary-6: #009387;
-  --clr-primary-7: #006e65;
-  --clr-primary-8: #004a44;
-  --clr-primary-9: #002522;
+  --clr-primary-6: hsl(216, 18%, 16%);
+  --clr-primary-7: hsl(216, 100%, 12%);
+  --clr-primary-8: hsl(216, 18%, 10%);
+  --clr-primary-9: hsl(216, 18%, 7%);
+
   /* darkest grey - used for headings */
-  --clr-grey-1: #102a42;
-  --clr-grey-2: #243a52;
-  --clr-grey-3: #324d67;
-  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-head-1: #102a42;
+  --clr-grey-head-2: #243a52;
+  --clr-grey-head-3: #324d67;
+  --clr-grey-head-4: hsl(209, 28%, 39%);
+
   /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-grey-par-5: hsl(210, 22%, 49%);
+  --clr-grey-par-6: hsl(209, 23%, 60%);
+  --clr-grey-par-7: hsl(211, 27%, 70%);
+  --clr-grey-par-8: hsl(210, 31%, 80%);
+  --clr-grey-par-9: hsl(212, 33%, 89%);
+  --clr-grey-par-10: hsl(210, 36%, 96%);
+
+  /* ad-hoc colors  */
+
   --clr-black: #000000;
   --clr-white: #fff;
+  --clr-yellow: hsl(0, 100%, 50%);
+
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
+  --ff-tertiary: "Montserrat", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -64,7 +75,7 @@ Global Styles
 body {
   font-family: var(--ff-secondary);
   background: var(--clr-white);
-  color: var(--clr-grey-1);
+  color: var(--white);
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -91,6 +102,7 @@ h4 {
 }
 h1 {
   font-size: 3rem;
+  color: var(--clr-white);
 }
 h2 {
   font-size: 2rem;
@@ -103,7 +115,7 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-5);
+  color: var(--clr-white);
 }
 
 @media screen and (min-width: 800px) {
@@ -183,7 +195,7 @@ p {
 }
 
 .bg-grey {
-  background: var(--clr-grey-10);
+  background: var(--clr-grey-par-10);
 }
 
 /*
@@ -259,7 +271,7 @@ Navbar
     content: " ";
     position: absolute;
     /* background-color: var(--clr-primary-2); */
-    background-color: yellow;
+    background-color: var(--clr-yellow);
     height: 3px;
     width: 0;
     left: 0;
@@ -268,7 +280,7 @@ Navbar
   }
 
   .nav-links a:hover {
-    color: yellow;
+    color: var(--clr-yellow);
   }
 
   .nav-links a:hover::after {
@@ -289,7 +301,7 @@ Navbar
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--clr-primary-3);
+  /* background: var(--clr-primary-3); */
   z-index: 2;
   box-shadow: var(--light-shadow);
 }
@@ -305,7 +317,7 @@ Sidebar
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--clr-grey-10);
+  background: var(--clr-grey-par-10);
   z-index: 10;
   display: grid;
   /* 
@@ -329,7 +341,7 @@ Sidebar
   font-size: 2rem;
   text-transform: capitalize;
   transition: var(--transition);
-  color: var(--clr-grey-5);
+  color: var(--clr-grey-par-5);
   letter-spacing: var(--spacing);
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -349,7 +361,7 @@ Sidebar
 
 .social-icon {
   font-size: 1.5rem;
-  color: var(--clr-grey-3);
+  color: var(--clr-head-par-3);
   transition: var(--transition);
 }
 
@@ -391,9 +403,9 @@ Hero
 
 .hero {
   /* width: 100vw; */
-  /* background-image: url(/images/pexels-prateek-katyal-2740956.jpg); */
-  /* background-size: cover; */
-  background: var(--clr-primary-5);
+  background-image: url(/images/hero-simple-shiny-bg.svg);
+  background-size: cover;
+  /* background: var(--clr-primary-5); */
 }
 
 .hero-center {
@@ -403,8 +415,16 @@ Hero
 }
 
 .hero-info h4 {
-  color: var(--clr-grey-5);
+  color: var(--clr-grey-par-5);
   margin-bottom: 2rem;
+}
+
+.hero-amplify {
+  color: var(--clr-yellow);
+}
+
+.hero-sub-heading {
+  color: var(--clr-white);
 }
 
 .hero-icons {
@@ -707,7 +727,7 @@ Connect
   /* background-color: rgba(0, 0, 0, 0.7); 
   or
   */
-  background-color: var(--clr-grey-1);
+  background-color: var(--clr-grey-head-1);
   opacity: 0.2;
   z-index: -1;
 }
@@ -718,7 +738,7 @@ Connect
 
 .video-text {
   margin-bottom: 3rem;
-  color: var(--clr-grey-1);
+  color: var(--clr-grey-head-1);
 }
 
 .video-banner {
@@ -798,7 +818,7 @@ Products Page
 }
 
 .single-project {
-  background-color: var(--clr-grey-10);
+  background-color: var(--clr-grey-par-10);
   border-radius: var(--radius);
 }
 
@@ -824,7 +844,7 @@ Products Page
   background-color: var(--clr-primary-5);
   border-radius: 50%;
   color: var(--clr-primary-1);
-  border: 0.375rem solid var(--clr-grey-10);
+  border: 0.375rem solid var(--clr-grey-par-10);
 }
 
 .project-details {
